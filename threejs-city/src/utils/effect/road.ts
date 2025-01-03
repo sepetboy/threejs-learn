@@ -50,7 +50,7 @@ export class Road {
     );
     geometry.setAttribute(
       "a_position",
-      new THREE.Float32BufferAttribute(aPositions, 3)
+      new THREE.Float32BufferAttribute(aPositions, 1)
     );
 
     const marterial = new THREE.ShaderMaterial({

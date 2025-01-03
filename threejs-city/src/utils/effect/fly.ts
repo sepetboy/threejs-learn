@@ -76,14 +76,17 @@ export class Fly {
 
     const geometry = new THREE.BufferGeometry();
 
+    // 从position里面获取位置信息，每次获取三个信息：x/y/z
     geometry.setAttribute(
       "position",
       new THREE.Float32BufferAttribute(positions, 3)
     );
+    // 从position里面获取位置信息，每次获取一个信息
     geometry.setAttribute(
       "a_position",
-      new THREE.Float32BufferAttribute(aPositions, 3)
+      new THREE.Float32BufferAttribute(aPositions, 1)
     );
+    console.log("a_position", new THREE.Float32BufferAttribute(aPositions, 3));
 
     const marterial = new THREE.ShaderMaterial({
       uniforms: {
@@ -113,7 +116,7 @@ export class Fly {
 
         void main(){
           float size = u_size;
-          float total_number = u_total * mod(u_time, 1.0);
+          float total_number = u_total * mod(u_time, 1.0);// mod 对1取余
 
           if(total_number > a_position && total_number < a_position + u_range) {
             float index = (a_position + u_range - total_number) / u_range;

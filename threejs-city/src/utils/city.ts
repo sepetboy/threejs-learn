@@ -110,13 +110,13 @@ export class City {
       scene: this.scene,
     });
 
-    // this.effect.snow = new Snow({
-    //   scene: this.scene,
-    // });
+    this.effect.snow = new Snow({
+      scene: this.scene,
+    });
 
-    // this.effect.rain = new Rain({
-    //   scene: this.scene,
-    // });
+    this.effect.rain = new Rain({
+      scene: this.scene,
+    });
 
     this.effect.smoke = new Smoke({
       scene: this.scene,

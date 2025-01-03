@@ -63,7 +63,6 @@ export const initCity = () => {
 
   const start = () => {
     city.start(clock.getDelta());
-
     controls.update();
     // 渲染场景
     renderer.render(scene, camera);
